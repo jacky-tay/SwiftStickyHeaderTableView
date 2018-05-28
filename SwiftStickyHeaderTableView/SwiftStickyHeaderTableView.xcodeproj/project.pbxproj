@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		850C9C0620BC8DF20035EDA2 /* IndexPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C9C0520BC8DF20035EDA2 /* IndexPath+Extensions.swift */; };
+		850C9C0A20BCA1D70035EDA2 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C9C0920BCA1D70035EDA2 /* UITableViewCell+Extensions.swift */; };
 		856B130420B7A46A005E16F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B130320B7A46A005E16F8 /* AppDelegate.swift */; };
 		856B130620B7A46A005E16F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B130520B7A46A005E16F8 /* ViewController.swift */; };
 		856B130920B7A46A005E16F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 856B130720B7A46A005E16F8 /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		850C9C0520BC8DF20035EDA2 /* IndexPath+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndexPath+Extensions.swift"; sourceTree = "<group>"; };
+		850C9C0920BCA1D70035EDA2 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		856B130020B7A46A005E16F8 /* SwiftStickyHeaderTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftStickyHeaderTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		856B130320B7A46A005E16F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		856B130520B7A46A005E16F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		850C9C0420BC8DD60035EDA2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				850C9C0520BC8DF20035EDA2 /* IndexPath+Extensions.swift */,
+				850C9C0920BCA1D70035EDA2 /* UITableViewCell+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		856B12F720B7A46A005E16F8 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +85,7 @@
 		856B130220B7A46A005E16F8 /* SwiftStickyHeaderTableView */ = {
 			isa = PBXGroup;
 			children = (
+				850C9C0420BC8DD60035EDA2 /* Extensions */,
 				856B131D20B7BA4B005E16F8 /* Cells */,
 				856B131620B7A66B005E16F8 /* Models */,
 				856B131520B7A65A005E16F8 /* Assets */,
@@ -196,6 +210,8 @@
 				856B131820B7A728005E16F8 /* Section.swift in Sources */,
 				856B130620B7A46A005E16F8 /* ViewController.swift in Sources */,
 				856B131C20B7A7E3005E16F8 /* Enum.swift in Sources */,
+				850C9C0620BC8DF20035EDA2 /* IndexPath+Extensions.swift in Sources */,
+				850C9C0A20BCA1D70035EDA2 /* UITableViewCell+Extensions.swift in Sources */,
 				856B134820BB7AC4005E16F8 /* PersonTableViewCell.swift in Sources */,
 				856B130420B7A46A005E16F8 /* AppDelegate.swift in Sources */,
 			);

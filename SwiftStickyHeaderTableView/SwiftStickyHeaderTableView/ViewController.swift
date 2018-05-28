@@ -9,8 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    var viewDidAppear = false
     var sections = [Section]()
+    var pointersForHeader = [IndexPath : Int]()
+    var rectDict = [IndexPath : CGRect]()
+    var minVisibleIndexPath = IndexPath.zero
+    var maxVisibleIndexPath = IndexPath.zero
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -22,12 +26,58 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         loadData(file: "data1")
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewDidAppear = true
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        // reset rect dictionary reference rect to zero when device orientation did changed
+        rectDict.keys.forEach { [weak self] in self?.rectDict[$0] = CGRect.zero }
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        var visibleIndexPathDidChange = false
+        if viewDidAppear, let minIndexPath = tableView.indexPathsForVisibleRows?.min(), minIndexPath != minVisibleIndexPath {
+            minVisibleIndexPath = minIndexPath
+            visibleIndexPathDidChange = true
+        }
+
+        if viewDidAppear, let maxIndexPath = tableView.indexPathsForVisibleRows?.max(), maxIndexPath != maxVisibleIndexPath {
+            maxVisibleIndexPath = maxIndexPath
+            visibleIndexPathDidChange = true
+        }
+
+        if visibleIndexPathDidChange {
+            updateStickyContent()
+        }
+    }
+
+    // MARK: - Prepare data
     private func loadData(file: String) {
         if let url = Bundle.main.url(forResource: file, withExtension: "json"),
             let data = (try? Data(contentsOf: url)),
             let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [[String : Any]] {
             sections = json.map { Section(json: $0) }
-        }
+            // reset all reference pointers
+            rectDict.removeAll()
+            pointersForHeader.removeAll()
+            for (index, section) in sections.enumerated() where (section.rows.reduce(false) { $0 || $1.hasChildren() }) {
+                for i in 0 ..< section.numberOfFlattenRows() where (section.get(flattenRowAt: i).hasChildren()) {
+                    let anchorPoint = IndexPath(row: i, section: index)
+                    let to = i + section.get(flattenRowAt: i).numberOfFlattenRows() - 1
+                    rectDict[anchorPoint] = CGRect.zero
+                    pointersForHeader[anchorPoint] = to
+                    let toAnchorPoint = IndexPath(row: to, section: index)
+                    rectDict[toAnchorPoint] = CGRect.zero
+                } //for row
+            } // for section
+        } // if let
+    }
+
+    private func updateStickyContent() {
+
     }
 
     // MARK: - UITableVewiDataSource
@@ -60,6 +110,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return sections[section].footer
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if rectDict[indexPath] != nil {
+            rectDict[indexPath] = cell.frame
+        }
     }
 }
 
