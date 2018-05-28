@@ -45,6 +45,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let vehicleCell = cell as? VehicleTableViewCell, let data = item as? VehicleRow {
             vehicleCell.bind(data: data)
         }
+        else if let personCell = cell as? PersonTableViewCell, let data = item as? PersonRow {
+            personCell.bind(data: data)
+        }
         else if let standardCell = cell as? StandardTableViewCell, let data = item as? StandardRow {
             standardCell.bind(data: data)
         }

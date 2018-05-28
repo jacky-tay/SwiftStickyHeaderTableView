@@ -43,6 +43,10 @@ class Row {
         }
     }
 
+    func hasChildren() -> Bool {
+        return !(children?.isEmpty ?? true)
+    }
+
     func numberOfFlattenRows() -> Int {
         return 1 + (children?.reduce(0) { $0 + $1.numberOfFlattenRows() } ?? 0)
     }
@@ -56,12 +60,16 @@ class Row {
             return self
         }
         var row = 0
-        var offset = 0
-        for i in 1 ..< children.count where offset < index - 1 { // need to subtract 1 because this cell is
-            offset += children[i].numberOfFlattenRows()
+        var offset = 1
+        for i in 1 ..< children.count where offset < index { // need to subtract 1 because this cell is
+            offset += children[i - 1].numberOfFlattenRows()
             row += 1
         }
-        return children[row].get(flattenRowAt: index - 1 - (offset - children[row].numberOfFlattenRows()))
+        if children[row].hasChildren() && (index - offset) < 0 {
+            offset -= children[row - 1].numberOfFlattenRows()
+            row -= 1
+        }
+        return children[row].get(flattenRowAt: index - offset)
     }
 }
 
