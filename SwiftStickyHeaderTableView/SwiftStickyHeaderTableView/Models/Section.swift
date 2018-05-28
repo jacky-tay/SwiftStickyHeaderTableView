@@ -20,4 +20,20 @@ class Section {
         }
         footer = json["footer"] as? String
     }
+
+    func numberOfFlattenRows() -> Int {
+        return rows.reduce(0) { $0 + $1.numberOfFlattenRows() }
+    }
+
+    func get(flattenRowAt index: Int) -> Row {
+        var row = 0
+        var offset = 0
+
+        for i in 1 ..< rows.count where offset < index {
+            offset += rows[i - 1].numberOfFlattenRows()
+            row += 1
+        }
+
+        return rows[row].get(flattenRowAt: index - offset)
+    }
 }

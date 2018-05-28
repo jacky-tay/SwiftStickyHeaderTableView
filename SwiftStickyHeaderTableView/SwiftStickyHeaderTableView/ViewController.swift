@@ -15,7 +15,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Review"
         // Do any additional setup after loading the view, typically from a nib.
+        tableView.register(UINib(nibName: "VehicleTableViewCell", bundle: nil), forCellReuseIdentifier: "VehicleCell")
+        tableView.register(UINib(nibName: "PersonTableViewCell", bundle: nil), forCellReuseIdentifier: "PersonCell")
+        loadData(file: "data1")
+    }
+
+    private func loadData(file: String) {
+        if let url = Bundle.main.url(forResource: file, withExtension: "json"),
+            let data = (try? Data(contentsOf: url)),
+            let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [[String : Any]] {
+            sections = json.map { Section(json: $0) }
+        }
     }
 
     // MARK: - UITableVewiDataSource
@@ -24,11 +36,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].rows.count
+        return sections[section].numberOfFlattenRows()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = sections[indexPath.section].rows[indexPath.row]
+        let item = sections[indexPath.section].get(flattenRowAt: indexPath.row)
         let cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier, for: indexPath)
         if let vehicleCell = cell as? VehicleTableViewCell, let data = item as? VehicleRow {
             vehicleCell.bind(data: data)

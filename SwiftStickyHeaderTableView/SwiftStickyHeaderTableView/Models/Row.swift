@@ -36,11 +36,32 @@ class Row {
             return VehicleRow(json: json)
         }
         else if type == "person" {
-            return VehicleRow(json: json)
+            return PersonRow(json: json)
         }
         else {
             return StandardRow(json: json)
         }
+    }
+
+    func numberOfFlattenRows() -> Int {
+        return 1 + (children?.reduce(0) { $0 + $1.numberOfFlattenRows() } ?? 0)
+    }
+
+    func get(flattenRowAt index: Int) -> Row {
+        guard index > 0 else {
+            return self
+        }
+        // dig further
+        guard let children = children, children.count > 0 else {
+            return self
+        }
+        var row = 0
+        var offset = 0
+        for i in 1 ..< children.count where offset < index - 1 { // need to subtract 1 because this cell is
+            offset += children[i].numberOfFlattenRows()
+            row += 1
+        }
+        return children[row].get(flattenRowAt: index - 1 - (offset - children[row].numberOfFlattenRows()))
     }
 }
 

@@ -18,6 +18,9 @@
 		856B132020B7BA74005E16F8 /* VehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B131E20B7BA74005E16F8 /* VehicleTableViewCell.swift */; };
 		856B132120B7BA74005E16F8 /* VehicleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856B131F20B7BA74005E16F8 /* VehicleTableViewCell.xib */; };
 		856B132520B7C093005E16F8 /* StandardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B132420B7C093005E16F8 /* StandardTableViewCell.swift */; };
+		856B134520BB3ACE005E16F8 /* data1.json in Resources */ = {isa = PBXBuildFile; fileRef = 856B134420BB3ACE005E16F8 /* data1.json */; };
+		856B134820BB7AC4005E16F8 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B134620BB7AC4005E16F8 /* PersonTableViewCell.swift */; };
+		856B134920BB7AC4005E16F8 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856B134720BB7AC4005E16F8 /* PersonTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		856B131E20B7BA74005E16F8 /* VehicleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleTableViewCell.swift; sourceTree = "<group>"; };
 		856B131F20B7BA74005E16F8 /* VehicleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleTableViewCell.xib; sourceTree = "<group>"; };
 		856B132420B7C093005E16F8 /* StandardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTableViewCell.swift; sourceTree = "<group>"; };
+		856B134420BB3ACE005E16F8 /* data1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data1.json; sourceTree = "<group>"; };
+		856B134620BB7AC4005E16F8 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		856B134720BB7AC4005E16F8 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 		856B131520B7A65A005E16F8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				856B134420BB3ACE005E16F8 /* data1.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -102,6 +109,8 @@
 				856B131E20B7BA74005E16F8 /* VehicleTableViewCell.swift */,
 				856B131F20B7BA74005E16F8 /* VehicleTableViewCell.xib */,
 				856B132420B7C093005E16F8 /* StandardTableViewCell.swift */,
+				856B134620BB7AC4005E16F8 /* PersonTableViewCell.swift */,
+				856B134720BB7AC4005E16F8 /* PersonTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -167,7 +176,9 @@
 			files = (
 				856B132120B7BA74005E16F8 /* VehicleTableViewCell.xib in Resources */,
 				856B130E20B7A46A005E16F8 /* LaunchScreen.storyboard in Resources */,
+				856B134920BB7AC4005E16F8 /* PersonTableViewCell.xib in Resources */,
 				856B130B20B7A46A005E16F8 /* Assets.xcassets in Resources */,
+				856B134520BB3ACE005E16F8 /* data1.json in Resources */,
 				856B130920B7A46A005E16F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +196,7 @@
 				856B131820B7A728005E16F8 /* Section.swift in Sources */,
 				856B130620B7A46A005E16F8 /* ViewController.swift in Sources */,
 				856B131C20B7A7E3005E16F8 /* Enum.swift in Sources */,
+				856B134820BB7AC4005E16F8 /* PersonTableViewCell.swift in Sources */,
 				856B130420B7A46A005E16F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
