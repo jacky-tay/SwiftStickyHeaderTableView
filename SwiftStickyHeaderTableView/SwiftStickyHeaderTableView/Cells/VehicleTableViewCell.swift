@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VehicleTableViewCell: UITableViewCell {
+class VehicleTableViewCell: StickyTableViewCell {
 
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var rego: UILabel!
@@ -21,5 +21,4 @@ class VehicleTableViewCell: UITableViewCell {
         title.text = data.title
         detail.text = data.detail
     }
-    
 }

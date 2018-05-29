@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		850C9C0620BC8DF20035EDA2 /* IndexPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C9C0520BC8DF20035EDA2 /* IndexPath+Extensions.swift */; };
 		850C9C0A20BCA1D70035EDA2 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C9C0920BCA1D70035EDA2 /* UITableViewCell+Extensions.swift */; };
+		850C9C0F20BCA84E0035EDA2 /* StandardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C9C0D20BCA84E0035EDA2 /* StandardTableViewCell.swift */; };
+		850C9C1020BCA84E0035EDA2 /* StandardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850C9C0E20BCA84E0035EDA2 /* StandardTableViewCell.xib */; };
 		856B130420B7A46A005E16F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B130320B7A46A005E16F8 /* AppDelegate.swift */; };
 		856B130620B7A46A005E16F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B130520B7A46A005E16F8 /* ViewController.swift */; };
 		856B130920B7A46A005E16F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 856B130720B7A46A005E16F8 /* Main.storyboard */; };
@@ -19,15 +21,17 @@
 		856B131C20B7A7E3005E16F8 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B131B20B7A7E3005E16F8 /* Enum.swift */; };
 		856B132020B7BA74005E16F8 /* VehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B131E20B7BA74005E16F8 /* VehicleTableViewCell.swift */; };
 		856B132120B7BA74005E16F8 /* VehicleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856B131F20B7BA74005E16F8 /* VehicleTableViewCell.xib */; };
-		856B132520B7C093005E16F8 /* StandardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B132420B7C093005E16F8 /* StandardTableViewCell.swift */; };
 		856B134520BB3ACE005E16F8 /* data1.json in Resources */ = {isa = PBXBuildFile; fileRef = 856B134420BB3ACE005E16F8 /* data1.json */; };
 		856B134820BB7AC4005E16F8 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B134620BB7AC4005E16F8 /* PersonTableViewCell.swift */; };
 		856B134920BB7AC4005E16F8 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856B134720BB7AC4005E16F8 /* PersonTableViewCell.xib */; };
+		8586D24E20BCF7E100ACF756 /* StickyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8586D24D20BCF7E100ACF756 /* StickyTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		850C9C0520BC8DF20035EDA2 /* IndexPath+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndexPath+Extensions.swift"; sourceTree = "<group>"; };
 		850C9C0920BCA1D70035EDA2 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		850C9C0D20BCA84E0035EDA2 /* StandardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTableViewCell.swift; sourceTree = "<group>"; };
+		850C9C0E20BCA84E0035EDA2 /* StandardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandardTableViewCell.xib; sourceTree = "<group>"; };
 		856B130020B7A46A005E16F8 /* SwiftStickyHeaderTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftStickyHeaderTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		856B130320B7A46A005E16F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		856B130520B7A46A005E16F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,10 +44,10 @@
 		856B131B20B7A7E3005E16F8 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		856B131E20B7BA74005E16F8 /* VehicleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleTableViewCell.swift; sourceTree = "<group>"; };
 		856B131F20B7BA74005E16F8 /* VehicleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleTableViewCell.xib; sourceTree = "<group>"; };
-		856B132420B7C093005E16F8 /* StandardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTableViewCell.swift; sourceTree = "<group>"; };
 		856B134420BB3ACE005E16F8 /* data1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data1.json; sourceTree = "<group>"; };
 		856B134620BB7AC4005E16F8 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		856B134720BB7AC4005E16F8 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
+		8586D24D20BCF7E100ACF756 /* StickyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +126,11 @@
 			children = (
 				856B131E20B7BA74005E16F8 /* VehicleTableViewCell.swift */,
 				856B131F20B7BA74005E16F8 /* VehicleTableViewCell.xib */,
-				856B132420B7C093005E16F8 /* StandardTableViewCell.swift */,
 				856B134620BB7AC4005E16F8 /* PersonTableViewCell.swift */,
 				856B134720BB7AC4005E16F8 /* PersonTableViewCell.xib */,
+				850C9C0D20BCA84E0035EDA2 /* StandardTableViewCell.swift */,
+				850C9C0E20BCA84E0035EDA2 /* StandardTableViewCell.xib */,
+				8586D24D20BCF7E100ACF756 /* StickyTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -191,6 +197,7 @@
 				856B132120B7BA74005E16F8 /* VehicleTableViewCell.xib in Resources */,
 				856B130E20B7A46A005E16F8 /* LaunchScreen.storyboard in Resources */,
 				856B134920BB7AC4005E16F8 /* PersonTableViewCell.xib in Resources */,
+				850C9C1020BCA84E0035EDA2 /* StandardTableViewCell.xib in Resources */,
 				856B130B20B7A46A005E16F8 /* Assets.xcassets in Resources */,
 				856B134520BB3ACE005E16F8 /* data1.json in Resources */,
 				856B130920B7A46A005E16F8 /* Main.storyboard in Resources */,
@@ -204,8 +211,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				850C9C0F20BCA84E0035EDA2 /* StandardTableViewCell.swift in Sources */,
 				856B132020B7BA74005E16F8 /* VehicleTableViewCell.swift in Sources */,
-				856B132520B7C093005E16F8 /* StandardTableViewCell.swift in Sources */,
 				856B131A20B7A749005E16F8 /* Row.swift in Sources */,
 				856B131820B7A728005E16F8 /* Section.swift in Sources */,
 				856B130620B7A46A005E16F8 /* ViewController.swift in Sources */,
@@ -213,6 +220,7 @@
 				850C9C0620BC8DF20035EDA2 /* IndexPath+Extensions.swift in Sources */,
 				850C9C0A20BCA1D70035EDA2 /* UITableViewCell+Extensions.swift in Sources */,
 				856B134820BB7AC4005E16F8 /* PersonTableViewCell.swift in Sources */,
+				8586D24E20BCF7E100ACF756 /* StickyTableViewCell.swift in Sources */,
 				856B130420B7A46A005E16F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

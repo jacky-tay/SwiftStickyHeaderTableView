@@ -14,7 +14,6 @@ protocol RowType {
 }
 
 class Row {
-    var isSubCategoryHeader: Bool
     var cellIdentifier: String { get { return "" } }
     var title: String!
     var detail: String!
@@ -23,8 +22,6 @@ class Row {
     init(json: [String : Any]) {
         title = json["title"] as? String ?? "Title"
         detail = json["detail"] as? String ?? "Detail"
-        isSubCategoryHeader = json["subHeader"] as? Bool ?? false
-        
         if let items = json["children"] as? [[String : Any]] {
             children = items.map { Row.getObject(json: $0) }
         }
@@ -41,6 +38,10 @@ class Row {
         else {
             return StandardRow(json: json)
         }
+    }
+
+    func has(child: Row) -> Bool {
+        return hasChildren() && (children?.contains(where: { $0 == child }) ?? false)
     }
 
     func hasChildren() -> Bool {
@@ -70,6 +71,12 @@ class Row {
             row -= 1
         }
         return children[row].get(flattenRowAt: index - offset)
+    }
+
+    static func ==(lhs: Row, rhs: Row) -> Bool {
+        return lhs.cellIdentifier == rhs.cellIdentifier &&
+        lhs.detail == rhs.detail &&
+        lhs.title == rhs.title
     }
 }
 

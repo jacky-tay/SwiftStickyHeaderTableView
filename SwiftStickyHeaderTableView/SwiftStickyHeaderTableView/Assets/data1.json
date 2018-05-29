@@ -1,708 +1,602 @@
  [
   {
-  "rows": [
-           {
-           "title": "Local Body",
-           "detail": "Rangitikei",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "Locality or suburb",
-           "detail": "Porewa",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "Crash road",
-           "detail": "SH IN\n350 Metres\nN",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "Side road",
-           "detail": "Putorino Road",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "CARD EVENT No.",
-           "detail": "P002718363",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "DOCLOC CASE No.",
-           "detail": "08614502162",
-           "type": "default",
-           "subHeader": false
-           }
-           ]
+  "rows" : [
+            {
+            "type" : "default",
+            "title" : "Local Body",
+            "detail" : "Rangitikei"
+            },
+            {
+            "type" : "default",
+            "title" : "Locality or suburb",
+            "detail" : "Porewa"
+            },
+            {
+            "type" : "default",
+            "title" : "Crash road",
+            "detail" : "SH IN\n350 Metres\nN"
+            },
+            {
+            "type" : "default",
+            "title" : "Side road",
+            "detail" : "Putorino Road"
+            },
+            {
+            "type" : "default",
+            "title" : "CARD EVENT No.",
+            "detail" : "P002718363"
+            },
+            {
+            "type" : "default",
+            "title" : "DOCLOC CASE No.",
+            "detail" : "08614502162"
+            }
+            ]
   },
   {
-  "rows": [
-           {
-           "title": "Crash date",
-           "detail": "05/05/2009",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "Crash time",
-           "detail": "11:15\nThursday",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "Office arrival time",
-           "detail": "11:25",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "SCNSTN",
-           "detail": "C",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "SECTOR CODE",
-           "detail": "RURAL",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "Where Stationed",
-           "detail": "BCP",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "Reporting Member Initials/Reg No.",
-           "detail": "MQ7987",
-           "type": "default",
-           "subHeader": false
-           }
-           ]
+  "rows" : [
+            {
+            "type" : "default",
+            "title" : "Crash date",
+            "detail" : "05\/05\/2009"
+            },
+            {
+            "type" : "default",
+            "title" : "Crash time",
+            "detail" : "11:15\nThursday"
+            },
+            {
+            "type" : "default",
+            "title" : "Office arrival time",
+            "detail" : "11:25"
+            },
+            {
+            "type" : "default",
+            "title" : "SCNSTN",
+            "detail" : "C"
+            },
+            {
+            "type" : "default",
+            "title" : "SECTOR CODE",
+            "detail" : "RURAL"
+            },
+            {
+            "type" : "default",
+            "title" : "Where Stationed",
+            "detail" : "BCP"
+            },
+            {
+            "type" : "default",
+            "title" : "Reporting Member Initials\/Reg No.",
+            "detail" : "MQ7987"
+            }
+            ]
   },
   {
-  "rows": [
-           {
-           "title": "Rank/Name",
-           "detail": "Sgt Smith",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "Initials",
-           "detail": "AL",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "Reg No.",
-           "detail": "5301",
-           "type": "default",
-           "subHeader": false
-           }
-           ],
-  "header": "Checked by (Supervisor)"
+  "rows" : [
+            {
+            "type" : "default",
+            "title" : "Rank\/Name",
+            "detail" : "Sgt Smith"
+            },
+            {
+            "type" : "default",
+            "title" : "Initials",
+            "detail" : "AL"
+            },
+            {
+            "type" : "default",
+            "title" : "Reg No.",
+            "detail" : "5301"
+            }
+            ],
+  "header" : "Checked by (Supervisor)"
   },
   {
-  "rows": [
-           {
-           "vehicle": "car",
-           "title": "Holden Commodore",
-           "detail": "Car",
-           "type": "vehicle",
-           "subHeader": true,
-           "rego": "AB5678",
-           "children": [
-                        {
-                        "title": "Year",
-                        "detail": "1990",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "CC rating",
-                        "detail": "3800",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "WOF or COF",
-                        "detail": "Yes",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "Expired date",
-                        "detail": "12/10/2009",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "Speed before crash",
-                        "detail": "100 km/h",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "Too fast for condition",
-                        "detail": "Yes",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "Total passengers (Not Drivers)",
-                        "detail": "Front: 1\nRear: 2",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "Damage severity",
-                        "detail": "Extensive",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "person": "man",
-                        "title": "Michael SHEPPARD",
-                        "detail": "Driver - Male",
-                        "type": "person",
-                        "subHeader": true,
-                        "children": [
-                                     {
-                                     "title": "FORE NAMES",
-                                     "detail": "Michael",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "SURNAME",
-                                     "detail": "Sheppard",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Address",
-                                     "detail": "RD3\nMakerua",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Phone Nos",
-                                     "detail": "06 843 2198",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "DOB",
-                                     "detail": "16/06/1947",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Gender",
-                                     "detail": "Male",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Ethnicity",
-                                     "detail": "NZ Maori",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Occupation",
-                                     "detail": "Sharemilker",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Licence No",
-                                     "detail": "A5543218",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Licence status",
-                                     "detail": "Full",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Restraint worn",
-                                     "detail": "Yes",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Injuries (in detail)",
-                                     "detail": "Broken ribs\nLacerations whiplash\nSerious",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Hospitalised at",
-                                     "detail": "P North\nSyspected",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Alcohol",
-                                     "detail": "Suspected",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Blood",
-                                     "detail": "95",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "DRIVER INTERVIEW NOTES",
-                                     "detail": "I was driving north towards Taihape. As I crossed the bridge, the car began to twitch. I braked and the car just shot across the road. I tried to control it but lost it on the shoulder. I ended up in the ditch on the other side of the road.\nI've only had two cans of beer.",
-                                     "type": "default",
-                                     "subHeader": false
-                                     }
-                                     ]
-                        },
-                        {
-                        "person": "woman",
-                        "title": "Jemma SHEPPARD",
-                        "detail": "Passanger 1 - Female",
-                        "type": "person",
-                        "subHeader": true,
-                        "children": [
-                                     {
-                                     "title": "Address",
-                                     "detail": "RD3 Makerua",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "DOB",
-                                     "detail": "01/08/1992",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Ethnicity",
-                                     "detail": "M",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Injuries",
-                                     "detail": "nil",
-                                     "type": "default",
-                                     "subHeader": false
-                                     }
-                                     ]
-                        },
-                        {
-                        "person": "doctor",
-                        "title": "Thomas Jon Atkinson",
-                        "detail": "Passanger 2 - Male",
-                        "type": "person",
-                        "subHeader": true,
-                        "children": [
-                                     {
-                                     "title": "Address",
-                                     "detail": "15 Park Avenue, Foxton",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "DOB",
-                                     "detail": "02/10/1940",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Ethnicity",
-                                     "detail": "E",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Injuries",
-                                     "detail": "bump on head",
-                                     "type": "default",
-                                     "subHeader": false
-                                     }
-                                     ]
-                        },
-                        {
-                        "person": "spiderman",
-                        "title": "Jemma SHEPPARD",
-                        "detail": "Passanger 1 - Female",
-                        "type": "person",
-                        "subHeader": true,
-                        "children": [
-                                     {
-                                     "title": "Address",
-                                     "detail": "RD3 Makerua",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "DOB",
-                                     "detail": "02/07/1999",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Ethnicity",
-                                     "detail": "M",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Injuries",
-                                     "detail": "nil",
-                                     "type": "default",
-                                     "subHeader": false
-                                     }
-                                     ]
-                        }
-                        ]
-           }
-           ],
-  "header": "Vehicle 1",
-  "footer": "Owns veh"
+  "rows" : [
+            {
+            "title" : "Holden Commodore",
+            "detail" : "Car",
+            "type" : "vehicle",
+            "rego" : "AB5678",
+            "vehicle" : "car",
+            "children" : [
+                          {
+                          "type" : "default",
+                          "title" : "Year",
+                          "detail" : "1990"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "CC rating",
+                          "detail" : "3800"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "WOF or COF",
+                          "detail" : "Yes"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "Expired date",
+                          "detail" : "12\/10\/2009"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "Speed before crash",
+                          "detail" : "100 km\/h"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "Too fast for condition",
+                          "detail" : "Yes"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "Total passengers (Not Drivers)",
+                          "detail" : "Front: 1\nRear: 2"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "Damage severity",
+                          "detail" : "Extensive"
+                          },
+                          {
+                          "person" : "man",
+                          "title" : "Michael SHEPPARD",
+                          "detail" : "Driver - Male",
+                          "type" : "person",
+                          "children" : [
+                                        {
+                                        "type" : "default",
+                                        "title" : "FORE NAMES",
+                                        "detail" : "Michael"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "SURNAME",
+                                        "detail" : "Sheppard"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Address",
+                                        "detail" : "RD3\nMakerua"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Phone Nos",
+                                        "detail" : "06 843 2198"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "DOB",
+                                        "detail" : "16\/06\/1947"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Gender",
+                                        "detail" : "Male"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Ethnicity",
+                                        "detail" : "NZ Maori"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Occupation",
+                                        "detail" : "Sharemilker"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Licence No",
+                                        "detail" : "A5543218"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Licence status",
+                                        "detail" : "Full"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Restraint worn",
+                                        "detail" : "Yes"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Injuries (in detail)",
+                                        "detail" : "Broken ribs\nLacerations whiplash\nSerious"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Hospitalised at",
+                                        "detail" : "P North\nSyspected"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Alcohol",
+                                        "detail" : "Suspected"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Blood",
+                                        "detail" : "95"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "DRIVER INTERVIEW NOTES",
+                                        "detail" : "I was driving north towards Taihape. As I crossed the bridge, the car began to twitch. I braked and the car just shot across the road. I tried to control it but lost it on the shoulder. I ended up in the ditch on the other side of the road.\nI've only had two cans of beer."
+                                        }
+                                        ]
+                          },
+                          {
+                          "person" : "woman",
+                          "title" : "Jemma SHEPPARD",
+                          "detail" : "Passanger 1 - Female",
+                          "type" : "person",
+                          "children" : [
+                                        {
+                                        "type" : "default",
+                                        "title" : "Address",
+                                        "detail" : "RD3 Makerua"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "DOB",
+                                        "detail" : "01\/08\/1992"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Ethnicity",
+                                        "detail" : "M"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Injuries",
+                                        "detail" : "nil"
+                                        }
+                                        ]
+                          },
+                          {
+                          "person" : "doctor",
+                          "title" : "Thomas Jon Atkinson",
+                          "detail" : "Passanger 2 - Male",
+                          "type" : "person",
+                          "children" : [
+                                        {
+                                        "type" : "default",
+                                        "title" : "Address",
+                                        "detail" : "15 Park Avenue, Foxton"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "DOB",
+                                        "detail" : "02\/10\/1940"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Ethnicity",
+                                        "detail" : "E"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Injuries",
+                                        "detail" : "bump on head"
+                                        }
+                                        ]
+                          },
+                          {
+                          "person" : "student",
+                          "title" : "Jemma SHEPPARD",
+                          "detail" : "Passanger 1 - Female",
+                          "type" : "person",
+                          "children" : [
+                                        {
+                                        "type" : "default",
+                                        "title" : "Address",
+                                        "detail" : "RD3 Makerua"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "DOB",
+                                        "detail" : "02\/07\/1999"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Ethnicity",
+                                        "detail" : "M"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Injuries",
+                                        "detail" : "nil"
+                                        }
+                                        ]
+                          }
+                          ]
+            }
+            ],
+  "header" : "Vehicle 1",
+  "footer" : "Owns veh"
   },
   {
-  "rows": [
-           {
-           "vehicle": "truck",
-           "title": "Toyota Hilux",
-           "detail": "Van",
-           "type": "vehicle",
-           "subHeader": true,
-           "rego": "BZ6173",
-           "children": [
-                        {
-                        "title": "Year",
-                        "detail": "1968",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "CC rating",
-                        "detail": "2000",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "WOF or COF",
-                        "detail": "No",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "Expiry date",
-                        "detail": "03/07/2009",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "Speed before crash",
-                        "detail": "?",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "Too fast for conditions",
-                        "detail": "No",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "Damage severity",
-                        "detail": "Overturn",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "person": "worker",
-                        "title": "Shane Lewis COOPER",
-                        "detail": "Driver - Male",
-                        "type": "person",
-                        "subHeader": true,
-                        "children": [
-                                     {
-                                     "title": "FORE NAMES",
-                                     "detail": "Shane Lewis",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "SURNAME",
-                                     "detail": "Cooper",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Address",
-                                     "detail": "11 Barker Grove\nMapuia",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Phone Nos",
-                                     "detail": "073782463",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "DOB",
-                                     "detail": "02/07/1963",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Gender",
-                                     "detail": "Male",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Ethnicity",
-                                     "detail": "European",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Occupation",
-                                     "detail": "singwriter",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Licence No",
-                                     "detail": "CS2738000",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Licence status",
-                                     "detail": "Full",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Restraint worn",
-                                     "detail": "Yes",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Injuries (in detail)",
-                                     "detail": "brusing\tshock\nMinor",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Hospitalised at",
-                                     "detail": "P North",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "Alcohol",
-                                     "detail": "Not suspected",
-                                     "type": "default",
-                                     "subHeader": false
-                                     },
-                                     {
-                                     "title": "DRIVER INTERVIEW NOTES",
-                                     "detail": "I was going south as I came around the bend I saw the green car spinning across the road. I swerved and braked to avoid him. I think the trailer must have jackknifed because next thing I knew I was upside down.",
-                                     "type": "default",
-                                     "subHeader": false
-                                     }
-                                     ]
-                        }
-                        ]
-           }
-           ],
-  "header": "Vehicle 2",
-  "footer": "Not owned"
+  "rows" : [
+            {
+            "title" : "Toyota Hilux",
+            "detail" : "Van",
+            "type" : "vehicle",
+            "rego" : "BZ6173",
+            "vehicle" : "truck",
+            "children" : [
+                          {
+                          "type" : "default",
+                          "title" : "Year",
+                          "detail" : "1968"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "CC rating",
+                          "detail" : "2000"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "WOF or COF",
+                          "detail" : "No"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "Expiry date",
+                          "detail" : "03\/07\/2009"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "Speed before crash",
+                          "detail" : "?"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "Too fast for conditions",
+                          "detail" : "No"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "Damage severity",
+                          "detail" : "Overturn"
+                          },
+                          {
+                          "person" : "worker",
+                          "title" : "Shane Lewis COOPER",
+                          "detail" : "Driver - Male",
+                          "type" : "person",
+                          "children" : [
+                                        {
+                                        "type" : "default",
+                                        "title" : "FORE NAMES",
+                                        "detail" : "Shane Lewis"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "SURNAME",
+                                        "detail" : "Cooper"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Address",
+                                        "detail" : "11 Barker Grove\nMapuia"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Phone Nos",
+                                        "detail" : "073782463"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "DOB",
+                                        "detail" : "02\/07\/1963"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Gender",
+                                        "detail" : "Male"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Ethnicity",
+                                        "detail" : "European"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Occupation",
+                                        "detail" : "singwriter"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Licence No",
+                                        "detail" : "CS2738000"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Licence status",
+                                        "detail" : "Full"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Restraint worn",
+                                        "detail" : "Yes"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Injuries (in detail)",
+                                        "detail" : "brusing\tshock\nMinor"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Hospitalised at",
+                                        "detail" : "P North"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "Alcohol",
+                                        "detail" : "Not suspected"
+                                        },
+                                        {
+                                        "type" : "default",
+                                        "title" : "DRIVER INTERVIEW NOTES",
+                                        "detail" : "I was going south as I came around the bend I saw the green car spinning across the road. I swerved and braked to avoid him. I think the trailer must have jackknifed because next thing I knew I was upside down."
+                                        }
+                                        ]
+                          }
+                          ]
+            }
+            ],
+  "header" : "Vehicle 2",
+  "footer" : "Not owned"
   },
   {
-  "rows": [
-           {
-           "title": "WHAT HAPPENED",
-           "detail": "Sheppard travelling north lost control on the wet road coming off the bridge into a right hand bend (85kmph advisory). He overcorrected and slid into the opposing lane and then off the road into a culvert and tree. Affected by alcohol. Cooper travelling south saw Sheppard out of control and took evasuve action but his ute/trailer combo rolled and went upside down against a fence on the western side of the road.",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "OBJECTS HIT",
-           "detail": "Culvert, tree, fence",
-           "type": "default",
-           "subHeader": false
-           }
-           ],
-  "header": "What happen"
+  "rows" : [
+            {
+            "type" : "default",
+            "title" : "WHAT HAPPENED",
+            "detail" : "Sheppard travelling north lost control on the wet road coming off the bridge into a right hand bend (85kmph advisory). He overcorrected and slid into the opposing lane and then off the road into a culvert and tree. Affected by alcohol. Cooper travelling south saw Sheppard out of control and took evasuve action but his ute\/trailer combo rolled and went upside down against a fence on the western side of the road."
+            },
+            {
+            "type" : "default",
+            "title" : "OBJECTS HIT",
+            "detail" : "Culvert, tree, fence"
+            }
+            ],
+  "header" : "What happen"
   },
   {
-  "rows": [
-           {
-           "title": "Road and Roadside factors (eg no barriers, no shoulder, large trees, limited visibility etc)",
-           "detail": "Wet and slippery patches just north of bridge\nLarge tree just north of bridge\nRumble strips each side of road",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "Road User factors (eg equipment, fatigue, dstraction, dark clothing etc)",
-           "detail": "Sheppard lost control and overcorrected possibly entered curve too fast.\nHad been drinking alcohol.",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "Vehicle factors (eg brakes, steering, tyres etc)",
-           "detail": "Cooper's vehicle had expired WOF. Trailer heavily loaded.",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "Speed factors (eg speed too great for conditions, too great for corner etc)",
-           "detail": "Sheppard too fast through corner.",
-           "type": "default",
-           "subHeader": false
-           }
-           ],
-  "header": "Why crash happened"
+  "rows" : [
+            {
+            "type" : "default",
+            "title" : "Road and Roadside factors (eg no barriers, no shoulder, large trees, limited visibility etc)",
+            "detail" : "Wet and slippery patches just north of bridge\nLarge tree just north of bridge\nRumble strips each side of road"
+            },
+            {
+            "type" : "default",
+            "title" : "Road User factors (eg equipment, fatigue, dstraction, dark clothing etc)",
+            "detail" : "Sheppard lost control and overcorrected possibly entered curve too fast.\nHad been drinking alcohol."
+            },
+            {
+            "type" : "default",
+            "title" : "Vehicle factors (eg brakes, steering, tyres etc)",
+            "detail" : "Cooper's vehicle had expired WOF. Trailer heavily loaded."
+            },
+            {
+            "type" : "default",
+            "title" : "Speed factors (eg speed too great for conditions, too great for corner etc)",
+            "detail" : "Sheppard too fast through corner."
+            }
+            ],
+  "header" : "Why crash happened"
   },
   {
-  "rows": [
-           {
-           "title": "Speed limit",
-           "detail": "100",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "Advisory speed",
-           "detail": "85",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "CURVATURE",
-           "detail": "Moderate",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "SURFACE",
-           "detail": "Sealed",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "SURFACE",
-           "detail": "Wet",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "LIGHT",
-           "detail": "Overcast",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "STREET LIGHTS",
-           "detail": "None",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "ROAD",
-           "detail": "2-way",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "TOTAL LANES",
-           "detail": "2",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "MARKINGS",
-           "detail": "Centre Line",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "TYPE",
-           "detail": "Bridge",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "Flat rd.",
-           "detail": "",
-           "type": "default",
-           "subHeader": false
-           },
-           {
-           "title": "WEATHER",
-           "detail": "Lt rain",
-           "type": "default",
-           "subHeader": false
-           }
-           ],
-  "header": "Details"
+  "rows" : [
+            {
+            "type" : "default",
+            "title" : "Speed limit",
+            "detail" : "100"
+            },
+            {
+            "type" : "default",
+            "title" : "Advisory speed",
+            "detail" : "85"
+            },
+            {
+            "type" : "default",
+            "title" : "CURVATURE",
+            "detail" : "Moderate"
+            },
+            {
+            "type" : "default",
+            "title" : "SURFACE",
+            "detail" : "Sealed"
+            },
+            {
+            "type" : "default",
+            "title" : "SURFACE",
+            "detail" : "Wet"
+            },
+            {
+            "type" : "default",
+            "title" : "LIGHT",
+            "detail" : "Overcast"
+            },
+            {
+            "type" : "default",
+            "title" : "STREET LIGHTS",
+            "detail" : "None"
+            },
+            {
+            "type" : "default",
+            "title" : "ROAD",
+            "detail" : "2-way"
+            },
+            {
+            "type" : "default",
+            "title" : "TOTAL LANES",
+            "detail" : "2"
+            },
+            {
+            "type" : "default",
+            "title" : "MARKINGS",
+            "detail" : "Centre Line"
+            },
+            {
+            "type" : "default",
+            "title" : "TYPE",
+            "detail" : "Bridge"
+            },
+            {
+            "type" : "default",
+            "title" : "Flat rd.",
+            "detail" : ""
+            },
+            {
+            "type" : "default",
+            "title" : "WEATHER",
+            "detail" : "Lt rain"
+            }
+            ],
+  "header" : "Details"
   },
   {
-  "rows": [
-           {
-           "title": "Allan John TUMER",
-           "detail": "Witness 1",
-           "type": "default",
-           "subHeader": true,
-           "children": [
-                        {
-                        "title": "Forenames",
-                        "detail": "Allan John",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "Surname",
-                        "detail": "Tumer",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "Residential Address",
-                        "detail": "581 Foxt St, Levin",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "Phone",
-                        "detail": "034719864",
-                        "type": "default",
-                        "subHeader": false
-                        },
-                        {
-                        "title": "Note",
-                        "detail": "Following ute and trailer - saw it suddenly wobble and go off to the right. Was approching bridge. Didn't notice other car until got closer.",
-                        "type": "default",
-                        "subHeader": false
-                        }
-                        ]
-           }
-           ],
-  "header": "Independent witnesses or other notes"
+  "rows" : [
+            {
+            "title" : "Allan John TUMER",
+            "detail" : "Witness 1",
+            "type" : "default",
+            "children" : [
+                          {
+                          "type" : "default",
+                          "title" : "Forenames",
+                          "detail" : "Allan John"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "Surname",
+                          "detail" : "Tumer"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "Residential Address",
+                          "detail" : "581 Foxt St, Levin"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "Phone",
+                          "detail" : "034719864"
+                          },
+                          {
+                          "type" : "default",
+                          "title" : "Note",
+                          "detail" : "Following ute and trailer - saw it suddenly wobble and go off to the right. Was approching bridge. Didn't notice other car until got closer."
+                          }
+                          ]
+            }
+            ],
+  "header" : "Independent witnesses or other notes"
   }
   ]

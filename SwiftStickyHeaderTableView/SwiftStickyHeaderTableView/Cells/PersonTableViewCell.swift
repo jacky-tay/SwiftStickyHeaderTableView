@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonTableViewCell: UITableViewCell {
+class PersonTableViewCell: StickyTableViewCell {
 
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var title: UILabel!
@@ -19,5 +19,4 @@ class PersonTableViewCell: UITableViewCell {
         title.text = data.title
         detail.text = data.detail
     }
-    
 }
