@@ -33,6 +33,10 @@ class Section {
             offset += rows[i - 1].numberOfFlattenRows()
             row += 1
         }
+        if offset > index {
+            row -= 1
+            offset -= rows[row].numberOfFlattenRows()
+        }
 
         return rows[row].get(flattenRowAt: index - offset)
     }
