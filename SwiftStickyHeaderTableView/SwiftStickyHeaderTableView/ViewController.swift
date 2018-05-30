@@ -8,22 +8,16 @@
 
 import UIKit
 
-protocol StickyTableViewControllerDelegate: NSObjectProtocol {
-    func layoutSubviewDidFinish(for indexPath: IndexPath)
-}
-
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, StickyTableViewControllerDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var viewDidAppear = false
     var sections = [Section]()
     var pointersForHeader = [IndexPath : IndexPath]() // key = starting point, value = ending point
     var stickyReference = [IndexPath]() // value = sections object index path
-    var rectDict = [IndexPath : CGRect]() // key = index path, value = cell frame
     var heightDict = [IndexPath : CGFloat]() // key = index path, value = cell's height
     var minVisibleIndexPath = IndexPath.zero
     var maxVisibleIndexPath = IndexPath.zero
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var stickyTableView: UITableView!
-    @IBOutlet weak var stickyTableViewHeightConstraints: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,9 +38,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        // reset rect dictionary reference rect to zero when device orientation did changed
-        rectDict.keys.forEach { [weak self] in self?.rectDict[$0] = CGRect.zero }
+        // reset hight reference when device orientation has changed
+        if previousTraitCollection != nil {
+            heightDict.removeAll()
+
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) { [weak self] in
+                self?.updateAndResetStickyTableView()
+            } // asyncAfter
+        }
+    }
+
+    func updateAndResetStickyTableView() {
         updateVisibleCellIndexPaths()
+        updateStickyContent()
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -80,23 +84,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [[String : Any]] {
             sections = json.map { Section(json: $0) }
             // reset all reference pointers
-            rectDict.removeAll()
             pointersForHeader.removeAll()
             for (index, section) in sections.enumerated() where (section.rows.reduce(false) { $0 || $1.hasChildren() }) {
                 for i in 0 ..< section.numberOfFlattenRows() where (section.get(flattenRowAt: i).hasChildren()) {
                     let anchorPoint = IndexPath(row: i, section: index)
                     let to = i + section.get(flattenRowAt: i).numberOfFlattenRows() - 1
                     let toAnchorPoint = IndexPath(row: to, section: index)
-
-                    rectDict[anchorPoint] = CGRect.zero
                     pointersForHeader[anchorPoint] = toAnchorPoint
-                    rectDict[toAnchorPoint] = CGRect.zero
                 } //for row
             } // for section
         } // if let
     }
 
-    private func updateStickyContent() {
+    private func updateStickyContent(canRetry: Bool = true) {
         stickyReference.removeAll()
         var indexPathsToStick = [IndexPath]() // the index path of header object
 
@@ -108,19 +108,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var stickyTableViewHeight: CGFloat = 0.0
 
         // add sticky view if needed
-        for indexPath in indexPathsToStick {
-            let isVisibleView = isWithinVisibleView(for: indexPath, stickyTableViewHeight: stickyTableViewHeight)
-            let isChildOfPreviousCell = check(indexPath: indexPath, isParentOf: stickyReference.last)
-            if isVisibleView && isChildOfPreviousCell, let rect = rectDict[indexPath] {
-                stickyReference.append(indexPath)
+        for indexPath in indexPathsToStick where isWithinVisibleView(for: indexPath, stickyTableViewHeight: stickyTableViewHeight) && check(indexPath: indexPath, isParentOf: stickyReference.last) {
+            if let height = heightDict[indexPath] {
+                stickyTableViewHeight += height
+            }
+            else if let rect = findRect(for: indexPath) {
                 stickyTableViewHeight += rect.height
             }
-            else {
-                // TODO when no rect
-                // stickyReference.append(indexPath)
-                // stickyTableViewHeight += (heightDict[indexPath] ?? 0)
-                // print(indexPath, rectDict[indexPath]?.origin.y, rectDict[indexPath]?.height , tableView.contentOffset.y + stickyTableViewHeight)
-            }
+            stickyReference.append(indexPath)
         }
 
         stickyTableView.reloadData()
@@ -128,14 +123,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // shift last sticky cell upward if needed
         if stickyReference.count > 0,
             let endAnchor = pointersForHeader[stickyReference[stickyReference.count - 1]],
-            let rect = rectDict[endAnchor], rect != CGRect.zero {
+            let rect = findRect(for: endAnchor) {
             let offset = rect.maxY - tableView.contentOffset.y - stickyTableViewHeight
-            if offset < 0, let cellHeight = heightDict[stickyReference[stickyReference.count - 1]] {
+            if offset < 0, let cellHeight = heightDict[stickyReference[stickyReference.count - 1]], cellHeight + offset > 0 {
                 stickyTableView.cellForRow(at: IndexPath(row: stickyReference.count - 1, section: 0))?.frame.origin.y = stickyTableViewHeight - cellHeight + offset
                 stickyTableViewHeight += offset
             }
         }
-        stickyTableViewHeightConstraints.constant = stickyTableViewHeight
     }
 
     /// Ensure that the index path range is visible within screen view
@@ -148,12 +142,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return to >= minVisibleIndexPath && from < maxVisibleIndexPath
     }
 
-    private func isWithinVisibleView(for indexPath: IndexPath, stickyTableViewHeight: CGFloat) -> Bool {
-        guard let rect = rectDict[indexPath], let endAnchor = pointersForHeader[indexPath] else {
+    private func isWithinVisibleView(for indexPath: IndexPath, stickyTableViewHeight: CGFloat, shouldRetry: Bool = true) -> Bool {
+        guard let endAnchor = pointersForHeader[indexPath] else {
             return false
         }
+        guard let rect = findRect(for: indexPath) else {
+            if let endRect = findRect(for: endAnchor) {
+                return endRect.maxY - tableView.contentOffset.y - stickyTableViewHeight > 0
+            }
+            return indexPath <= minVisibleIndexPath && endAnchor >= minVisibleIndexPath
+        }
         let shouldPresent = rect.origin.y < (tableView.contentOffset.y + stickyTableViewHeight)
-        if shouldPresent, let endRect = rectDict[endAnchor], endRect != CGRect.zero {
+        if shouldPresent, let endRect = findRect(for: endAnchor) {
             return endRect.maxY - tableView.contentOffset.y - stickyTableViewHeight > 0
         }
         return shouldPresent
@@ -171,11 +171,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return parentRow.has(child: childRow)
     }
 
-    private func findBottomAnchorRect(for indexPath: IndexPath?) -> CGRect {
-        guard let indexPath = indexPath else {
-            return CGRect.zero
-        }
-        return rectDict[indexPath] ?? CGRect.zero
+    func findRect(for indexPath: IndexPath) -> CGRect? {
+        return tableView.cellForRow(at: indexPath)?.frame
     }
 
     // MARK: - UITableViewDataSource
@@ -203,9 +200,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         else if let standardCell = cell as? StandardTableViewCell, let data = item as? StandardRow {
             standardCell.bind(data: data)
         }
-
-        (cell as? StickyTableViewCell)?.update(indexPath: useIndexPath, and: self)
-
         return cell
     }
 
@@ -219,18 +213,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if tableView == self.tableView && rectDict[indexPath] != nil {
-            rectDict[indexPath] = cell.frame
-            heightDict[indexPath] = cell.frame.height
-        }
-        else if tableView == stickyTableView && indexPath.row < stickyReference.count {
+        if tableView == stickyTableView && indexPath.row < stickyReference.count {
             heightDict[stickyReference[indexPath.row]] = cell.frame.height
         }
-    }
-
-    // MARK: - StickyTableViewControllerDelegate
-    func layoutSubviewDidFinish(for indexPath: IndexPath) {
-        
     }
 }
 

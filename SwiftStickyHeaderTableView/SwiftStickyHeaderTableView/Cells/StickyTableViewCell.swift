@@ -9,17 +9,4 @@
 import UIKit
 
 class StickyTableViewCell: UITableViewCell {
-
-    weak var delegate: StickyTableViewControllerDelegate?
-    var indexPath: IndexPath!
-
-    func update(indexPath: IndexPath, and delegate: StickyTableViewControllerDelegate) {
-        self.indexPath = indexPath
-        self.delegate = delegate
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        delegate?.layoutSubviewDidFinish(for: indexPath)
-    }
 }

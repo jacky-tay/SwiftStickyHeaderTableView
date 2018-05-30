@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,11 +26,8 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="thI-oh-BTI">
-                                <rect key="frame" x="0.0" y="64" width="375" height="0.0"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" id="Hni-s1-CMs"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="i5a-8k-4io"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="t7g-ix-tOs"/>
@@ -42,6 +38,7 @@
                         <constraints>
                             <constraint firstItem="thI-oh-BTI" firstAttribute="trailing" secondItem="F3L-o6-eFd" secondAttribute="trailing" id="142-g6-iLh"/>
                             <constraint firstItem="thI-oh-BTI" firstAttribute="top" secondItem="F3L-o6-eFd" secondAttribute="top" id="4LE-S7-Fc5"/>
+                            <constraint firstItem="thI-oh-BTI" firstAttribute="bottom" secondItem="F3L-o6-eFd" secondAttribute="bottom" id="Djf-0N-jp2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="F3L-o6-eFd" secondAttribute="bottom" id="Orq-hK-x7M"/>
                             <constraint firstItem="thI-oh-BTI" firstAttribute="leading" secondItem="F3L-o6-eFd" secondAttribute="leading" id="ZLv-OE-iNg"/>
                             <constraint firstItem="F3L-o6-eFd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="e3W-g9-CpT"/>
@@ -53,7 +50,6 @@
                     <navigationItem key="navigationItem" id="Zsh-zx-cRZ"/>
                     <connections>
                         <outlet property="stickyTableView" destination="thI-oh-BTI" id="8z0-3A-uIh"/>
-                        <outlet property="stickyTableViewHeightConstraints" destination="Hni-s1-CMs" id="9BG-Hl-iaI"/>
                         <outlet property="tableView" destination="F3L-o6-eFd" id="eZ4-RD-fC8"/>
                     </connections>
                 </viewController>
