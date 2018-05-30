@@ -24,11 +24,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         title = "Review"
         stickyTableView.backgroundColor = UIColor.clear
         stickyTableView.tableFooterView = UIView()
-        stickyTableView.clipsToBounds = true
         register(nibCells: [(UINib(nibName: "StandardTableViewCell", bundle: nil), "StandardCell"),
                             (UINib(nibName: "VehicleTableViewCell", bundle: nil), "VehicleCell"),
                             (UINib(nibName: "PersonTableViewCell", bundle: nil), "PersonCell")])
         loadData(file: "data1")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "change", style: .plain, target: self, action: #selector(changeData))
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -46,6 +46,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self?.updateAndResetStickyTableView()
             } // asyncAfter
         }
+    }
+
+    @objc func changeData() {
+        let data = title == "data1" ? "data2" : "data1"
+        loadData(file: data)
+        tableView.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) { [weak self] in self?.updateStickyContent() }
     }
 
     func updateAndResetStickyTableView() {
@@ -79,11 +86,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     private func loadData(file: String) {
+        title = file
         if let url = Bundle.main.url(forResource: file, withExtension: "json"),
             let data = (try? Data(contentsOf: url)),
             let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [[String : Any]] {
             sections = json.map { Section(json: $0) }
             // reset all reference pointers
+            heightDict.removeAll()
             pointersForHeader.removeAll()
             for (index, section) in sections.enumerated() where (section.rows.reduce(false) { $0 || $1.hasChildren() }) {
                 for i in 0 ..< section.numberOfFlattenRows() where (section.get(flattenRowAt: i).hasChildren()) {
@@ -96,7 +105,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } // if let
     }
 
-    private func updateStickyContent(canRetry: Bool = true) {
+    private func updateStickyContent() {
         stickyReference.removeAll()
         var indexPathsToStick = [IndexPath]() // the index path of header object
 
