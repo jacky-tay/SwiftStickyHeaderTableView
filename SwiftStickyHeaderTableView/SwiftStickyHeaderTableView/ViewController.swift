@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var maxVisibleIndexPath = IndexPath.zero
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var stickyTableView: UITableView!
+    @IBOutlet weak var scrollView: UIScrollView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                             (UINib(nibName: "VehicleTableViewCell", bundle: nil), "VehicleCell"),
                             (UINib(nibName: "PersonTableViewCell", bundle: nil), "PersonCell")])
         loadData(file: "data1")
+
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "change", style: .plain, target: self, action: #selector(changeData))
     }
 
@@ -64,6 +66,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if viewDidAppear && scrollView == tableView {
             updateVisibleCellIndexPaths()
             updateStickyContent()
+            self.scrollView.contentSize.height = tableView.contentSize.height
+            self.scrollView.contentOffset = CGPoint(x: 0, y: tableView.contentOffset.y)
+            self.scrollView.subviews.last?.alpha = 1
+        }
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        UIView.animate(withDuration: 0.15) { [weak self] in self?.scrollView.subviews.last?.alpha = 0 }
+    }
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            UIView.animate(withDuration: 0.3) { [weak self] in self?.scrollView.subviews.last?.alpha = 0 }
         }
     }
 
@@ -227,4 +242,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 }
-

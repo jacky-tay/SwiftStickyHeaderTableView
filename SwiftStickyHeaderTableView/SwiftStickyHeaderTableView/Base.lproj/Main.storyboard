@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="F3L-o6-eFd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="F3L-o6-eFd">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
@@ -33,14 +33,23 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="t7g-ix-tOs"/>
                                 </connections>
                             </tableView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8v3-2O-gkg">
+                                <rect key="frame" x="365" y="64" width="10" height="603"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="KZ3-eL-Gcu"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="thI-oh-BTI" firstAttribute="trailing" secondItem="F3L-o6-eFd" secondAttribute="trailing" id="142-g6-iLh"/>
                             <constraint firstItem="thI-oh-BTI" firstAttribute="top" secondItem="F3L-o6-eFd" secondAttribute="top" id="4LE-S7-Fc5"/>
                             <constraint firstItem="thI-oh-BTI" firstAttribute="bottom" secondItem="F3L-o6-eFd" secondAttribute="bottom" id="Djf-0N-jp2"/>
+                            <constraint firstItem="8v3-2O-gkg" firstAttribute="bottom" secondItem="F3L-o6-eFd" secondAttribute="bottom" id="OQ6-Dm-Kc6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="F3L-o6-eFd" secondAttribute="bottom" id="Orq-hK-x7M"/>
                             <constraint firstItem="thI-oh-BTI" firstAttribute="leading" secondItem="F3L-o6-eFd" secondAttribute="leading" id="ZLv-OE-iNg"/>
+                            <constraint firstItem="8v3-2O-gkg" firstAttribute="trailing" secondItem="F3L-o6-eFd" secondAttribute="trailing" id="Zrz-8i-cEg"/>
+                            <constraint firstItem="8v3-2O-gkg" firstAttribute="top" secondItem="F3L-o6-eFd" secondAttribute="top" id="cXU-jZ-Tlk"/>
                             <constraint firstItem="F3L-o6-eFd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="e3W-g9-CpT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F3L-o6-eFd" secondAttribute="trailing" id="hi8-mj-pzL"/>
                             <constraint firstItem="F3L-o6-eFd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qN9-8A-gAb"/>
@@ -49,6 +58,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Zsh-zx-cRZ"/>
                     <connections>
+                        <outlet property="scrollView" destination="8v3-2O-gkg" id="4df-BT-54L"/>
                         <outlet property="stickyTableView" destination="thI-oh-BTI" id="8z0-3A-uIh"/>
                         <outlet property="tableView" destination="F3L-o6-eFd" id="eZ4-RD-fC8"/>
                     </connections>
