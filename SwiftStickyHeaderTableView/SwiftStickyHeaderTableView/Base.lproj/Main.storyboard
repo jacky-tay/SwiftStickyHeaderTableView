@@ -40,7 +40,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="thI-oh-BTI" firstAttribute="trailing" secondItem="F3L-o6-eFd" secondAttribute="trailing" id="142-g6-iLh"/>
                             <constraint firstItem="thI-oh-BTI" firstAttribute="top" secondItem="F3L-o6-eFd" secondAttribute="top" id="4LE-S7-Fc5"/>

@@ -12,8 +12,15 @@ import UIKit
 extension UITableViewCell {
 
     class func getDefaultSeparatorInsets() -> UIEdgeInsets {
-        // left margin is 20 for 6/7 plus device
-        let leftMargin: CGFloat = UIScreen.main.scale == 3 ? 20 : 16
-        return UIEdgeInsetsMake(0, leftMargin, 0, 0)
+        return UITableViewCell().separatorInset
+    }
+
+    func setSeperatorToZero() {
+        setSeperator(edge: UIEdgeInsets.zero)
+    }
+
+    func setSeperator(edge: UIEdgeInsets) {
+        separatorInset = edge
+        layoutMargins = edge
     }
 }

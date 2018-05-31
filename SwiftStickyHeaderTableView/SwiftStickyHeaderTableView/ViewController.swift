@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var stickyTableView: UITableView!
     @IBOutlet weak var scrollView: UIScrollView!
+    private var edgeInset = UIEdgeInsets.zero
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class ViewController: UIViewController {
                             (UINib(nibName: "VehicleTableViewCell", bundle: nil), "VehicleCell"),
                             (UINib(nibName: "PersonTableViewCell", bundle: nil), "PersonCell")])
         loadData(file: "data1")
-
+        edgeInset = UITableViewCell.getDefaultSeparatorInsets()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "change", style: .plain, target: self, action: #selector(changeData))
     }
 
@@ -158,17 +159,26 @@ class ViewController: UIViewController {
         }
         stickyTableView.reloadData()
 
+        // make sure all sticky table view cell seperator is reset back to normal
+        let inset = edgeInset
+        stickyTableView.visibleCells.forEach { $0.setSeperator(edge: inset) }
+
         // shift last sticky cell upward if needed
         if stickyReference.count > 0,
             let endAnchor = pointersForHeader[stickyReference[stickyReference.count - 1]],
-            let rect = findRect(for: endAnchor) {
+            let rect = findRect(for: endAnchor),
+            let lastCell = stickyTableView.cellForRow(at: IndexPath(row: stickyReference.count - 1, section: 0)) {
             // the last stick cell should shift upward if the ending anchor is leaving the visible space
             let offset = rect.maxY - tableView.contentOffset.y - stickyTableViewHeight
             if offset < 0, let cellHeight = heightDict[stickyReference[stickyReference.count - 1]], cellHeight + offset > 0 {
-                stickyTableView.cellForRow(at: IndexPath(row: stickyReference.count - 1, section: 0))?.frame.origin.y = stickyTableViewHeight - cellHeight + offset
+                lastCell.frame.origin.y = stickyTableViewHeight - cellHeight + offset
                 stickyTableViewHeight += offset
 
-            }
+                // if endAnchor is the last item in the section
+                if endAnchor.row + 1 == tableView(tableView, numberOfRowsInSection: endAnchor.section) {
+                    lastCell.setSeperatorToZero() // set the last cell seperator with zero to make it look like it has reached to the end of a grouped table view
+                }
+            } // if offset < 0
         } // if there is more than 1 sticky table view cell
     }
 
