@@ -1,5 +1,5 @@
 # SwiftStickyHeaderTableView
-Allow table view cell sticks on the top of the screen when user view it in a grouped table view.
+Allow table view cell sticks on the top of the screen when user views it in a grouped table view.
 
 ![Demo](https://github.com/jacky-tay/SwiftStickyHeaderTableView/blob/master/Assets/sticky1.mov.gif)
 
