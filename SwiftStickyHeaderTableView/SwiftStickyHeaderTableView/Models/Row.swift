@@ -74,12 +74,12 @@ class Row {
         var row = 0
         var offset = 1 // use offset as reference point when viewing children in a flatten dimension
         // increment row count when the number of flatten rows is smaller than the index
-        for i in 1 ..< children.count where offset < index { // need to subtract 1 because this cell is
-            offset += children[i - 1].numberOfFlattenRows()
+        for i in 0 ..< children.count where offset < index { // need to subtract 1 because this cell is
+            offset += children[i].numberOfFlattenRows()
             row += 1
         }
         // decrement the row if the found child Row object has children and the index is smaller than the offset reference
-        if row > 0 && children[row].hasChildren() && index < offset  {
+        if row > 0 && children[row - 1].hasChildren() && index < offset  {
             row -= 1
             offset -= children[row].numberOfFlattenRows()
         }
