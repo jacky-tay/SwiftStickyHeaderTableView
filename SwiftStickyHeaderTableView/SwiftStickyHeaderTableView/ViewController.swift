@@ -148,7 +148,7 @@ class ViewController: UIViewController {
         for i in 0 ..< reference.count where reference[i] != stickyReference[i] {
             return true
         }
-        return diff
+        return false
     }
 
     /// Update sticky table view content
