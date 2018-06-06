@@ -134,10 +134,26 @@ class ViewController: UIViewController {
         } // for section
     }
 
+    /// Check that if the sticky reference is different from the input reference
+    ///
+    /// - Parameter reference: The input reference
+    /// - Returns: `True` if any of the index path is different, otherwise `False`
+    private func has(referenceChanged reference: [IndexPath]) -> Bool {
+        guard reference.count == stickyReference.count else {
+            return true
+        }
+        guard !reference.isEmpty else {
+            return false
+        }
+        for i in 0 ..< reference.count where reference[i] != stickyReference[i] {
+            return true
+        }
+        return diff
+    }
 
     /// Update sticky table view content
     private func updateStickyContent() {
-        stickyReference.removeAll()
+        var temp = [IndexPath]() // the index path for sticky reference
         var indexPathsToStick = [IndexPath]() // the index path of header object
 
         // get all estimated visible index path for sticky reference
@@ -148,16 +164,21 @@ class ViewController: UIViewController {
         var stickyTableViewHeight: CGFloat = 0.0
 
         // add sticky reference when the index path (starting anchor) is within the visible view (isWithinVisibleView(for:StickyTableViewHeight:)), and it must be the child for previous sticky cell
-        for indexPath in indexPathsToStick where isWithinVisibleView(for: indexPath, stickyTableViewHeight: stickyTableViewHeight) && check(indexPath: indexPath, isChildOf: stickyReference.last) {
+        for indexPath in indexPathsToStick where isWithinVisibleView(for: indexPath, stickyTableViewHeight: stickyTableViewHeight) && check(indexPath: indexPath, isChildOf: temp.last) {
             if let height = heightDict[indexPath] {
                 stickyTableViewHeight += height
             }
             else if let rect = findRect(for: indexPath) {
                 stickyTableViewHeight += rect.height
             }
-            stickyReference.append(indexPath)
+            temp.append(indexPath)
         }
-        stickyTableView.reloadData()
+
+        // Only reload sticky table if the reference index paths have changed
+        if has(referenceChanged: temp) {
+            stickyReference = temp
+            stickyTableView.reloadData()
+        }
 
         // make sure all sticky table view cell seperator is reset back to normal
         let inset = edgeInset
